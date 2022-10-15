@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPEKYOLU</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> 
+    <style>
+           *{
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        header{
+            width: 95%;
+            height: 4rem;
+            margin: 0 auto;
+        }
+        h2{
+            margin-top: 0.5rem;
+        }
+        main{
+            width: 50%;
+            margin: 0 auto;           
+            margin-top: 5rem;
+        }
+        hr{
+            border: 0.1rem solid black;
+            margin: 0.5rem 0 0.5rem 0;
+        }
+        td{
+            padding-bottom: 2rem;
+            font-size: large;
+        }
+        .from_data{
+            padding-bottom: 2rem;
+            font-size: large;
+        }
+        img{
+            width: 10%;
+        height: 10%;
+        margin-top: 1%;
+        margin-left: 45%;
+        }
+        .AV{
+            border: 2px solid white;
+            border-radius: 30%;
+            width: 25%;
+            height: 50px;
+            text-align: center;
+            padding-top: 1.5%;
+
+        }
+    </style>
+</head>
+<body>
+    <body style="background-color:#4B4B4A ;">
+        <img src="{% static 'css/images/222222222-removebg-preview.png'%}" alt="icon">
+        <main>
+            <h2>Available dr.name Appointments :</h2><br><br>
+            
+            <div class="AV">
+                
+            </div>
+            
+            <form class="d-flex justify-content-between" action="" method="post">
+                <p></p>
+                <button type="button" class="btn btn-secondary" >Book</button>
+            </form>
+        </main>
+    
+</body>
+</html>

@@ -1,0 +1,197 @@
+*{
+    margin: auto 0 ;
+    padding:  0;
+    font-family: 'Times New Roman', serif;
+}
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    width: 100%;
+    height: 700px;
+    /* opacity: 0.98; */
+    border-radius: 10px;
+}
+main{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/electronic-health-records-tips-featured-image.jpg');
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* opacity: 0.98; */
+    border-radius: 10px;
+    height: 100%; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header{
+    display: flex;
+    justify-content: space-evenly;
+    font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+    
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+p{
+    color: white;
+    font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+    font-size: 40px;
+    margin-left: 7%;
+    margin-top: 20%;
+}
+
+u{
+    text-decoration: underline;
+    text-decoration-color: rgb(137 137 137);
+}
+.btn{
+    background-color: #112A2D;
+    width: 200px;
+    color: white;
+    margin-left: 7%;
+    height: 50px;
+    margin-top: 2%;
+    font-size: 17px;
+    border-color: #E0E0DB;
+    font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+}
+
+.btn:target {
+    color: wheat;
+    }
+.btn:hover{
+    color:  white;
+
+}
+
+footer{
+    background-color: #E0E0DB;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0px;
+}
+.ft{
+    color: black;
+    background-color: white;
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+    height: 170px;
+    padding-top: 30px;
+}
+img {
+    width: 10%;
+    height: 10%;
+    margin-top: 1%;
+}
+
+a{
+    font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+}
+
+a:target {
+    color:hsl(182deg 83% 9%);
+    }
+a:hover{
+    color:  hsl(182deg 83% 9%);
+
+}
+
+.General , .Pediatrician , .Dental , .Internal , .Ophthalmologist , .Dermatologist , .Orthopedic , .Neurologist , .Gynecologist{
+    width: 20%;
+    height: 18rem;
+    margin-left: 1%;
+    margin-bottom: 1.5%;
+    color: white;
+    font-size: 13px;
+    /* border: 3px solid white; */
+    border-radius: 40%;
+    align-items: center;
+    display: flex ; 
+    flex-direction: column;
+    /* padding-top: 3%; */
+    
+}
+
+.General{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/general.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Pediatrician{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/pediatrician.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Dental{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/dentist.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Internal{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/internal.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Ophthalmologist{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/ophthalmologist.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Dermatologist{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/dermatologist.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Orthopedic{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/orthopedic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Neurologist{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/medical.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Gynecologist{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/gynecologist.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.one , .two , .three {
+    display: flex;
+    justify-content: space-evenly;
+}
+.specialties{
+    margin-top: 5%;
+}
+.bookHere{
+    font-size: 15px;
+}
+.clinic{
+    width: 50%;
+    height: 40%;
+    /* border-radius: 50%; */
+    margin-top: 7%;
+}
+span {
+    color: black;
+    opacity: 0.5;
+    font-size: 15px;
+    position: relative;
+    top: 50px;
+    right: 200px;
+}

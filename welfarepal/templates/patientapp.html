@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPEKYOLU</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        *{
+            font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+        
+        }
+        img{        
+        width: 150px;
+        height: 100px;
+        margin-left: 45%;
+        }
+
+        .head{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        /* margin-right: 10px; */
+    }
+
+    th{
+        font-weight: bold;
+        font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+        text-align: center;
+
+    }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        /* width: 50%; */
+        text-align: center;
+
+    }
+    .btn.btn-primary{
+        border-color: white ;
+        background-color:hsl(182deg 83% 9%);
+        font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+    }
+</style>
+</head>
+
+<body style="background-color:hsl(60deg 7% 87%);">
+    <header>
+        <img src="{% static 'css/images/logo-removebg-preview (1).png'%}" alt="icon">
+        <div class="head">
+            <a href="/home" style="margin-left: 25px;" class="btn btn-primary"  role="button">Home</a>
+            <div class="press"> 
+                <a href="/backSpec/{{thisSpecial}}" style="margin-left: 25px;" class="btn btn-primary"  role="button">Back</a>
+                <a href="/patientDash/{{thispattient.id}}" style="margin-left: 25px;" class="btn btn-primary"  role="button">Dashboard</a>
+            </div>
+        </div>
+    </header>
+    <main  class="container">
+    <div class="choose">
+        <table class="table">
+            <tr class="table-active">
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+            </tr>
+            {%for appointments in sessions%}
+            <tr class="table-active">
+                {%for appointment in appointments%}
+                {%if appointment.session %}
+                <td scope="col"><a href="/Add/{{drid}}/{{appointment.id}}/{{thisSpecial}}">{{appointment.session}}:00</a> </td>
+                {%else%}
+                <td scope="col">{{appointment}}</td>
+                {%endif%}
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </table>
+    </main>
+</body>
+
+</html>

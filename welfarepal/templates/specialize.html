@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPEKYOLU</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+    html {
+        box-sizing: border-box;
+      }
+      
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      
+      .column {
+        float: left;
+        width: 265px;
+        margin-bottom: 16px;
+        padding: 0 8px;
+      }
+      
+      @media screen and (max-width: 650px) {
+        .column {
+          width: 100%;
+          display: block;
+        }
+      }
+      
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+      
+      .container {
+        padding: 0 16px;
+      }
+      
+      .container::after, .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+      .title {
+        color: grey;
+      }
+      
+      .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+      }
+      
+      .button:hover {
+        background-color: #555;
+      }
+
+      .btn.btn-primary{
+        border-color: hsl(182deg 83% 9%) ;
+        background-color:hsl(182deg 83% 9%);
+        margin-bottom: 20px;
+        font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+    }
+
+    .row {
+    margin-left: 10px;
+}
+
+      </style>
+</head>
+
+<body style="background-color:hsl(60deg 7% 87%);">
+
+    <header>
+        <img src="{% static 'css/images/logo-removebg-preview (1).png'%}" alt="icon " height="10%" width="10%" style="margin-left:45% ;">
+        <div class="head">
+            <a href="/home" style="margin-left: 25px; border-color: hsl(182deg 83% 9%);background-color:hsl(182deg 83% 9%);" class="btn btn-primary" role="button" aria-disabled="true">Back to Clinics</a> <br>
+        </div>
+    </header>
+    <main>
+    <div class="choose" style="margin-top: 25px;margin-left: 25px;">
+        <p><b> Choose A <span>{{thisSpecial}}</span> Doctor </b></p>
+    </div>
+
+    <nav>
+        <form action="/specialization/{{thisSpecial}}/Assign" method="post">
+            {% csrf_token %}
+            <select name="location"  class="form-select" aria-label="Default select example" style="margin-left:50px ;">
+                <option value=""  >All Locations</option>
+                {%for locs in locations%}
+                <option value="{{locs}}">{{locs}}</option>
+                {%endfor%}
+                <input  width="80px; " height="20px;" type="submit" value="Search" style="margin-left: 25px;margin-bottom: 5px; border-color: hsl(182deg 83% 9%);background-color:hsl(182deg 83% 9%);color: white;" class="btn btn-secondery" role="button" aria-disabled="true">
+            </select>
+        </form>
+    </main>
+
+{%for doctor in drs%}
+<div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="/images/{{doctor.image}}" alt="Jane" style="width:100%">
+        <div class="container">
+          <p><b>Dr.{{doctor.First_Name}} {{doctor.Last_Name}} </b> </p>
+          <p class="title">{{doctor.specialization}}</p>
+          <p>Phone_Number: {{doctor.Phone_Number}}</p>
+          <p>Email: {{doctor.email}}</p>
+          <a href="/patientbook/{{doctor.id}}/{{thisSpecial}}" class="btn btn-primary" role="button" aria-disabled="true">Book</a>
+        </div>
+      </div>
+    </div>
+{%endfor%} 
+
+</body>
+
+
+
+
+</html>

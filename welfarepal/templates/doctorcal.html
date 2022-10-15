@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPEKYOLU</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> 
+    <style>
+        *{
+            font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+        
+        }
+        header {
+            /* width: 95%; */
+            /* height: 4rem; */
+            /* margin: 0 auto; */
+        }
+
+        h1 {
+            margin-top: 0.5rem;
+            font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+            margin-bottom: 5%;
+            color: black;
+            margin-top: 100px;
+        }
+
+        td {
+            font-size: large;
+            font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+        }
+
+        th{
+        font-weight: bold;
+        font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+
+        }
+
+        .from_data {
+            font-size: large;
+            font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+        }
+
+
+        .btn.btn-primary{
+        border-color: hsl(182deg 83% 9%) ;
+        background-color:hsl(182deg 83% 9%);
+        margin-top: 100px;
+        font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+        }
+
+        img{
+            width: 10%;
+            height: 10%;
+            margin-right: 8%;
+        }
+    </style>
+</head>
+
+<body style="background-color: hsl(60deg 7% 87%);">
+    <header class="d-flex justify-content-around">
+        <h1><u>Welcome Dr.{{DocName}}</u> </h1>
+        <img src="{% static 'css/images/logo-removebg-preview (1).png'%}" alt="icon">
+        <div>
+            <a href="/Back/{{thisDoc.id}}"  class="btn btn-primary" role="button" aria-disabled="true">Back</a>
+            <a href="/logoutDoctor"  class="btn btn-primary" role="button" aria-disabled="true">LogOut</a> 
+        </div>      
+    </header>
+    <section>
+    <form action="book/{{thisDoc.id}}" method="post">
+    <main class="container">
+        {%csrf_token%}
+        <table class="table">
+            <tr class="table-active">
+                <th scope="col">Day</th>
+                <th scope="col">8:00 am</th>
+                <th scope="col">9:00 am</th>
+                <th scope="col">10:00 am</th>
+                <th scope="col">11:00 am</th>
+                <th scope="col">12:00 pm</th>
+                <th scope="col">13:00 pm</th>
+                <th scope="col">14:00 pm</th>
+                <th scope="col">15:00 pm</th>
+                <th scope="col">16:00 pm</th>
+                <th scope="col">17:00 pm</th>
+            </tr>
+            {%for x in range %}
+            <tr class="table-active">
+                {%if x == 5%}
+                <td scope="col">Satarday</td>
+                {%elif x == 6%}
+                <td scope="col">Sunday</td>
+                {%elif x == 7%}
+                <td scope="col">Monday</td>
+                {%elif x == 1%}
+                <td scope="col">Tuesday</td>
+                {%elif x == 2%}
+                <td scope="col">Wednesday</td>
+                {%elif x == 3%}
+                <td scope="col">Thursday</td>
+                {%elif x == 4%}
+                <td scope="col">Friday</td>
+                {%endif%}
+
+                {%for y in hours%}
+                <td scope="col">{{y}}:00
+                    <input type="checkbox" id="{{x}},{{y}}" name="vacancies" value="{{x}},{{y}}">
+                </td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </table>
+        <input  class="btn btn-primary" role="button" aria-disabled="true" type="submit" value="Book Sessions">
+        </form>
+    </section>
+    </main>  
+</body>
+
+</html>

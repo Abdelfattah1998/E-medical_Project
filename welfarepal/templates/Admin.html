@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPEKYOLU</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <style>
+        *{
+            font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+        img{        
+         width: 10%;
+        height: 10%;
+        margin-right: 10%;
+       
+        }
+        a{
+            width: 7%;
+            height: 5%;
+            margin-top: 3%;
+            color: black;
+        }
+        span{
+            color: black;
+        }
+        .btn.btn-primary{
+        border-color: hsl(182deg 83% 9%) ;
+        background-color:hsl(182deg 83% 9%);
+        margin-bottom: 50px;
+        margin-top: 8%;
+        margin-right: 20px;
+        font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+        }
+    </style>
+</head>
+<body style="background-color: hsl(60deg 7% 87%);">
+    <header class="d-flex justify-content-between">
+        <h1 style="color: black; margin-top: 8%; margin-left: 1%;" >Welcome Admin</h1>
+        <img src="{% static 'css/images/logo-removebg-preview (1).png'%}" alt="icon">
+        <a href="/" class="btn btn-primary" role="button" aria-disabled="true">LogOut</a>
+    </header>
+    <main class="container">
+        <h2  style="color: black; margin-left: 1%;">New registration requests :</h2>
+        <table class="table ">
+            <tr class="table-active">
+                <th scope="col">Dr.Name</th>
+                <th scope="col">Medical Number</th>
+                <th scope="col">Certificate</th>
+                <th scope="col">Approval</th>
+            </tr>
+            {% for doctor in AllDoctors%}
+            {%if doctor.Approval == null%}
+            <tr class="table-active">
+                <td scope="col">{{doctor.First_Name}} {{doctor.Last_Name}}</td>
+                <td scope="col">{{doctor.MedicalNumber}}</td>
+                <td scope="col"><a href="/images/{{doctor.Certificate}}">Show Certificate</a></td>
+                <td scope="col"><a href="/approval/{{doctor.id}}">Accept</a><span>--</span><a href="/reject/{{doctor.id}}">Reject</a></td>
+            </tr> 
+            {%endif%}
+            {%endfor%}
+            
+        </table>
+    </main>
+</body>
+</html>

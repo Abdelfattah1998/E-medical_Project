@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPEKYOLU</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/MainPage.css' %}"> 
+</head>
+<style>
+    .btn.btn-primary{
+        border-color: white ;
+        background-color:gray;
+        font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+    }
+    h2{
+        font-family:"tenso","tenso_latinextreme","Helvetica","Arial",sans-serif;
+    }
+
+</style>
+<body>
+    <!-- <main> -->
+        <header>
+            <img src="{% static 'css/images/222222222-removebg-preview.png'%}" alt="icon">
+            <div style="display: flex; justify-content: space-between; margin-left: 500px;">
+                <a href="/" style="margin-left: 25px;">Main Page</a>
+                <a href="/reg" style="margin-left: 25px;">Registration</a>
+                <a href="/reg" style="margin-left: 25px;">Login</a>
+                <a href="/contactUs" style="margin-left: 25px;">Contact Us</a>
+            <div>    
+        </header>
+        <div class="specialties">
+            <div class="one">
+                <div class="General">
+                    <a class="bookHere" href="/specialization/General" class="btn btn-primary" value="Add new Appointment" style="background-color:gray ;border-color: hsl(182deg 83% 9%) ; width: 80px; height: 25px; text-align: center; margin-top: 50%; padding-top: 2.5%;">Book Here</a>
+                    <h2>General Clinic</h2>
+                </div>
+                <div class="Pediatrician">
+                    <a class="bookHere" href="/specialization/Pediatrician" class="btn btn-primary" value="Add new Appointment" style="background-color:gray ;border-color: hsl(182deg 83% 9%) ; width: 80px; height: 25px; text-align: center; margin-top: 50%; padding-top: 2.5%;">Book Here</a>
+                    <h2>Pediatrician Clinic</h2>
+                </div>
+
+                <div class="Dental">
+                    <a class="bookHere" href="/specialization/Dental" class="btn btn-primary" value="Add new Appointment" style="background-color:gray ;border-color: hsl(182deg 83% 9%) ; width: 80px; height: 25px; text-align: center; margin-top: 50%; padding-top: 2.5%;">Book Here</a>
+                    <h2>Dental Clinic</h2>
+                </div>
+            </div>
+            <div class="two">
+                <div class="Internal">
+                    <a class="bookHere" href="/specialization/Internal" class="btn btn-primary" value="Add new Appointment" style="background-color:gray ;border-color: hsl(182deg 83% 9%) ; width: 80px; height: 25px; text-align: center; margin-top: 50%; padding-top: 2.5%;">Book Here</a>
+                    <h2>Internal Clinic</h2>
+                </div>
+                <div class="Ophthalmologist">
+                    <a class="bookHere" href="/specialization/Ophthalmologist" class="btn btn-primary" value="Add new Appointment" style="background-color:gray ;border-color: hsl(182deg 83% 9%) ; width: 80px; height: 25px; text-align: center; margin-top: 50%; padding-top: 2.5%;">Book Here</a>
+                    <h2>Ophthalmologist Clinic</h2>
+                </div>
+                <div class="Dermatologist">
+                    <a class="bookHere" href="/specialization/Dermatologist" class="btn btn-primary" value="Add new Appointment" style="background-color:gray ;border-color: hsl(182deg 83% 9%) ; width: 80px; height: 25px; text-align: center; margin-top: 50%; padding-top: 2.5%;">Book Here</a>
+                    <h2>Dermatologist Clinic</h2>
+                </div>
+            </div>
+            <div class="three">
+                <div class="Orthopedic">
+                    <a class="bookHere" href="/specialization/Orthopedic" class="btn btn-primary" value="Add new Appointment" style="background-color:gray ;border-color: hsl(182deg 83% 9%) ; width: 80px; height: 25px; text-align: center; margin-top: 50%; padding-top: 2.5%;">Book Here</a>
+                    <h2>Orthopedic Clinic</h2>
+                </div>
+                <div class="Neurologist ">
+                    <a class="bookHere" href="/specialization/Neurologist" class="btn btn-primary" value="Add new Appointment" style="background-color:gray ;border-color: hsl(182deg 83% 9%) ; width: 80px; height: 25px; text-align: center; margin-top: 50%; padding-top: 2.5%;">Book Here</a>
+                    <h2>Neurologist Clinic</h2>
+                </div>
+                <div class="Gynecologist ">
+                    <a class="bookHere" href="/specialization/Gynecologist" class="btn btn-primary" value="Add new Appointment" style="background-color:gray ;border-color: hsl(182deg 83% 9%) ; width: 80px; height: 25px; text-align: center; margin-top: 50%; padding-top: 2.5%;">Book Here</a>
+                    <h2>Gynecologist Clinic</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

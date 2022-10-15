@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPEKYULO</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/MainPage.css' %}">
+</head>
+<html>  
+<body>
+    <main>
+        <header>
+            <img src="{% static 'css/images/222222222-removebg-preview.png'%}" alt="icon">
+            <div style="display: flex; justify-content: space-between; margin-left: 500px;">
+                <a href="/home" style="margin-left: 25px;">Home</a>
+                <a href="/reg" style="margin-left: 25px;">Registration</a>
+                <a href="/reg" style="margin-left: 25px;">Login</a>
+                <a href="/contactUs" style="margin-left: 25px;">Contact Us</a>
+            </div>
+        </header>
+        <p>IPEKYULO is a clinic that <br>
+            offers primary care services <br>diagnosis , and 
+            treatment of mild symptoms</p>
+        <form action="/home" style="height: 100px;">
+            <button class="btn">Learn More</button>
+        </form>
+    </main>
+    <section>
+        <p class="ft">We have a team of highly qualified <br>
+            and experienced specialists and <br>
+            caregivers to attend to. <br> <u> Visit
+            us for exceptional health services.</u>
+            </p>
+    </section>
+    <script src="login.js"></script>
+</body>
+</html>

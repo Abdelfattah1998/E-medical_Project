@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPEKYOLU</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <title>Login & Registration</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            color: black;
+        
+        }
+        img{        
+        width: 150px;
+        height: 100px;
+        margin-right: 70px;
+        }
+
+        .press{
+        margin-top: 100px;
+        margin-right: 10px;
+    }
+
+    th{
+        font-weight: bold;
+        text-align: center;
+
+    }
+    table {
+        border-collapse: collapse;
+        width: 50%;
+        text-align: center;
+
+    }
+    .btn.btn-primary{
+        border-color: white ;
+        background-color:hsl(182deg 83% 9%);
+        margin-top: 70px;
+    }
+
+    </style>
+</head>
+<body style="background-color:hsl(60deg 7% 87%);">
+    <header class="d-flex justify-content-between">
+        <h1 style="color: white; margin-top: 3%; margin-left: 1%; "><u style="text-decoration-color:hsl(182deg 83% 9%);"> Welcome {{PattientName}}</u> </h1>
+        <img src="{% static 'css/images/logo-removebg-preview (1).png'%}" alt="icon">
+        <div class="press"> 
+        <a href="show/{{ThisPattient.id}}" class="btn btn-primary"  role="button" >Show</a>
+        <a href="/logoutPatient" class="btn btn-primary" role="button" >LogOut</a>
+        </div>
+    </header>
+    <hr>
+    <main class="container">
+        <h2>My Appointments :</h2>
+        <table class="table postTable">
+            <tr>
+                <th>Dr.Name</th>
+                <th>Time & Date</th>
+                <th>Delete</th>
+            </tr>
+            {% for myApp in ThisPattientApp%}
+            <tr class="post-{{myApp.id}}">
+                <td>{{myApp.doctor.First_Name}}{{myApp.doctor.Last_Name}}</td>
+                <td>{{myApp.session}}:00 _ {{myApp.vacancies | date:"M d"}}</td>
+                <td>
+                    {%csrf_token%}
+                    <button type="button" data-id={{myApp.id}} class="btn btn-xs btn-danger btn-flat delete-post">Cancel</button>
+                </td>
+                
+            </tr> 
+            {%endfor%}
+        <form class="d-flex justify-content-between" action="/home" method="post">
+            {% csrf_token %}
+            <p></p>
+            <input type="submit" class="btn btn-primary" value="Add new Appointment" style="background-color:hsl(182deg 83% 9%) ;border-color: hsl(182deg 83% 9%) ;" >
+        </form>
+    </main>
+    <script type="text/javascript">
+        $(document).ready(function () {
+    
+            $("body").on("click",".delete-post",function(e){
+    
+                e.preventDefault();
+                var id = $(this).data("id");
+    
+                $.ajax({
+                    url: "cancel/"+id,
+                    type: 'DELETE',
+                    dataType: 'json',
+                    headers: {
+                        "X-CSRFTOKEN": "{{ csrf_token }}"
+                    },
+                    data: {
+                        id: id
+                    },
+                    success: function (response){
+                        $(".postTable .post-" + id).remove();
+                    }
+                });
+                return false;
+        });
+        });
+    </script>
+</body>
+</html>
