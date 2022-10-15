@@ -231,7 +231,7 @@ def Showspecialization(request,special):
         doctors=Doctor.objects.filter(Specialization=special,Location=request.session['location'])
     else:
         doctors=Doctor.objects.filter(Specialization=special)
-    location=['']
+    location=[]
     for doctor in alldoctors:
         if doctor.Location not in location:
             location.append(doctor.Location)
